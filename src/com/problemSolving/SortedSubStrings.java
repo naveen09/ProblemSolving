@@ -1,4 +1,4 @@
-package com.hackerearth;
+package com.problemSolving;
 
 import java.util.Scanner;
 

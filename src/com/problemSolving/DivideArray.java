@@ -1,4 +1,4 @@
-package com.hackerearth;
+package com.problemSolving;
 
 import java.util.Scanner;
 
@@ -18,7 +18,7 @@ public class DivideArray
             String[] sData = sc.nextLine().split(" ");
             data = new int[N];
             int Q = sc.nextInt();
-            int[] QQ = new int[Q];
+            int QQ = 1;
             if (Q >= 1 && Q <= MAX)
             {
                 sc.nextLine();
@@ -27,10 +27,7 @@ public class DivideArray
                     int D = Integer.parseInt(sc.nextLine());
                     if (D >= 1 && D <= MAX)
                     {
-                        QQ[qq] = D;
-                    } else
-                    {
-                        return;
+                        QQ *= D;
                     }
                 }
                 for (int i = 0; i < sData.length; i++)
@@ -38,19 +35,8 @@ public class DivideArray
                     int number = Integer.parseInt(sData[i]);
                     if (number >= 1 && number <= MAX)
                     {
-                        data[i] = number;
-                        for (int dd = 0; dd < QQ.length; dd++)
-                        {
-                            data[i] = data[i] / QQ[dd];
-                        }
-                    } else
-                    {
-                        return;
+                        System.out.print(number / QQ);
                     }
-                }
-                for (int i = 0; i < data.length; i++)
-                {
-                    System.out.print(data[i]);
                     if (i != data.length - 1)
                     {
                         System.out.print(" ");
