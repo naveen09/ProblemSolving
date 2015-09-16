@@ -17,19 +17,18 @@ public class StringPermutations
         sc.close();
     }
 
-    private static void process(String s, String endString)
+    private static void process(String s1, String s2)
     {
-        if (endString.length() <= 1)
+        if (s2.length() <= 1)
         {
-            System.out.println(s + endString);
+            System.out.println(s1 + s2);
         } else
         {
-            for (int i = 0; i < endString.length(); i++)
+            for (int i = 0; i < s2.length(); i++)
             {
-                String newString = endString.substring(0, i)
-                                   + endString.substring(i + 1,
-                                                         endString.length());
-                process(s + endString.charAt(i), newString);
+                String s3 = s2.substring(0, i)
+                            + s2.substring(i + 1, s2.length());
+                process(s1 + s2.charAt(i), s3);
             }
         }
     }
